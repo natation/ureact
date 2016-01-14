@@ -40,17 +40,40 @@
             </div>
           );
         }
-      })
+      });
+
+      var ThumbnailList = React.createClass({
+        render: function () {
+          var list = this.props.thumbnailData.map(function (thumbnailProps, i) {
+            return <Thumbnail key={i} {...thumbnailProps} />;
+          });
+          return (
+            <div>
+              {list}
+            </div>
+          );
+        }
+      });
+
       var options = {
-        title: "Inbox",
-        number: 32,
-        header: "Learn React",
-        description: "I love learning React",
-        imageURL: "https://facebook.github.io/react/img/logo_og.png"
+        thumbnailData: [{
+            title: "Inbox",
+            number: 32,
+            header: "Learn React",
+            description: "I love learning React",
+            imageURL: "https://facebook.github.io/react/img/logo_og.png"
+          },
+          {
+            title: "Show Courses",
+            number: 5,
+            header: "Learn Gulp",
+            description: "I love learning Gulp",
+            imageURL: "https://avatars0.githubusercontent.com/u/6200624?v=3&s=400"
+          }
+        ]
       };
 
-      // var element = React.createElement(Badge, options);
-      var element = React.createElement(Thumbnail, options);
+      var element = React.createElement(ThumbnailList, options);
 
       ReactDOM.render(element, document.querySelector('.target'));
     </script>
