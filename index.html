@@ -3,79 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Badge</title>
-    <script src="https://fb.me/react-0.14.6.js"></script>
-    <script src="https://fb.me/react-dom-0.14.6.js"></script>
-    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-sm-5 target">
-
         </div>
       </div>
     </div>
-    <script type="text/jsx">
-      var Badge = React.createClass({
-        render: function () {
-          return (
-            <button className="btn btn-primary" type="button">
-              {this.props.title} <span className="badge">{this.props.number}</span>
-            </button>
-          );
-        }
-      });
-
-      var Thumbnail = React.createClass({
-        render: function () {
-          return (
-            <div className="thumbnail">
-              <img src={this.props.imageURL} />
-              <div className="caption">
-                <h3>{this.props.header}</h3>
-                <p>{this.props.description}</p>
-                <Badge title={this.props.title} number={this.props.number}/>
-              </div>
-            </div>
-          );
-        }
-      });
-
-      var ThumbnailList = React.createClass({
-        render: function () {
-          var list = this.props.thumbnailData.map(function (thumbnailProps, i) {
-            return <Thumbnail key={i} {...thumbnailProps} />;
-          });
-          return (
-            <div>
-              {list}
-            </div>
-          );
-        }
-      });
-
-      var options = {
-        thumbnailData: [{
-            title: "Inbox",
-            number: 32,
-            header: "Learn React",
-            description: "I love learning React",
-            imageURL: "https://facebook.github.io/react/img/logo_og.png"
-          },
-          {
-            title: "Show Courses",
-            number: 5,
-            header: "Learn Gulp",
-            description: "I love learning Gulp",
-            imageURL: "https://avatars0.githubusercontent.com/u/6200624?v=3&s=400"
-          }
-        ]
-      };
-
-      var element = React.createElement(ThumbnailList, options);
-
-      ReactDOM.render(element, document.querySelector('.target'));
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
